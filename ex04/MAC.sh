@@ -1,1 +1,2 @@
-ifconfig | grep '\tether' | cut -c 8-
+#!/bin/bash
+ifconfig -a | grep "ether" -w | sed s'/ether//' | tr -d '\t '
